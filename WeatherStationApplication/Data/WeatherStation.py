@@ -1,7 +1,15 @@
+import os, sys
 from WeatherData import WeatherData
-from CurrentConditionsDisplay import CurrentConditionsDisplay 
-from StatisticsDisplay import StatisticsDisplay 
-from ForecastDisplay import ForecastDisplay
+
+currDir = os.path.dirname(os.path.realpath(__file__))
+rootDir = os.path.abspath(os.path.join(currDir, '..'))
+if rootDir not in sys.path:  # add parent dir to paths
+    sys.path.append(rootDir)
+
+from Display.CurrentConditionsDisplay import CurrentConditionsDisplay 
+from Display.StatisticsDisplay import StatisticsDisplay 
+from Display.ForecastDisplay import ForecastDisplay
+
 
 class WeaterStation:
     def main():

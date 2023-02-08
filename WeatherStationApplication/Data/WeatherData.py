@@ -1,5 +1,3 @@
-import Observer
-
 class WeatherData():
     
     def __init__(self) -> None:
