@@ -1,10 +1,11 @@
 class WeatherData():
     
-    def __init__(self) -> None:
+    def __init__(self, dispatcher) -> None:
         self.observers = []
         self.temperature = 0
         self.humidity = 0
         self.pressure = 0
+        self.dispatcher = dispatcher
 
     def registerObserver(self, observer):
         self.observers.append(observer)
@@ -20,6 +21,7 @@ class WeatherData():
 
     def measurementsChanged(self):
         self.notifyObservers()
+        self.updateDispatcher()
 
     def setMeasurements(self, temperature, humidity, pressure):
         self.temperature = temperature
@@ -35,3 +37,6 @@ class WeatherData():
 
     def getPressure(self):
         return self.pressure
+
+    def updateDispatcher(self):
+        self.dispatcher.update("Temperature: {}\n Humidity: {}\n Pressure: {}\n".format(self.temperature, self.humidity, self.pressure))

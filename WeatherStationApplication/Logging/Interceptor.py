@@ -1,7 +1,11 @@
-import abc
+from abc import ABC, abstractmethod
 
-class Interceptor(metaclass=abc.ABCMeta):
-    
-    @classmethod
-    def __subclasshook__(cls, subclass):
-        return (hasattr(subclass, 'updateLog') and callable(subclass.updateLog))
+class Interceptor(ABC):
+    @abstractmethod
+    def update(self, context):
+        pass
+
+
+class WeatherDisplayInterceptor(Interceptor):
+    def update(self, context):
+        print("Weather has been updated:\n {}".format(context.update))

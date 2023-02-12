@@ -10,10 +10,16 @@ from Display.CurrentConditionsDisplay import CurrentConditionsDisplay
 from Display.StatisticsDisplay import StatisticsDisplay 
 from Display.ForecastDisplay import ForecastDisplay
 
+from Logging.WeatherDispatcher import WeatherDispatcher
+from Logging.Interceptor import WeatherDisplayInterceptor
+
 
 class WeaterStation:
     def main():
-        weatherData = WeatherData()
+        dispatcher = WeatherDispatcher()
+        dispatcher.add_interceptor(WeatherDisplayInterceptor())
+
+        weatherData = WeatherData(dispatcher)
 
         currentConditionsDisplay = CurrentConditionsDisplay(weatherData)
         statisticsDisplay = StatisticsDisplay(weatherData)
