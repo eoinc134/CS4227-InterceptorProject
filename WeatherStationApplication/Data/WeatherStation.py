@@ -11,13 +11,13 @@ from Display.StatisticsDisplay import StatisticsDisplay
 from Display.ForecastDisplay import ForecastDisplay
 
 from Logging.WeatherDispatcher import WeatherDispatcher
-from Logging.Interceptor import WeatherDisplayInterceptor
+from Logging.Interceptor import WeatherUpdateInterceptor
 
 
 class WeaterStation:
     def main():
         dispatcher = WeatherDispatcher()
-        dispatcher.add_interceptor(WeatherDisplayInterceptor())
+        dispatcher.add_interceptor(WeatherUpdateInterceptor())
 
         weatherData = WeatherData(dispatcher)
 

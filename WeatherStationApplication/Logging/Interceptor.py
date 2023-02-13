@@ -5,7 +5,6 @@ class Interceptor(ABC):
     def update(self, context):
         pass
 
-
-class WeatherDisplayInterceptor(Interceptor):
+class WeatherUpdateInterceptor(Interceptor):
     def update(self, context):
         print("Weather has been updated:\n {}".format(context.update))

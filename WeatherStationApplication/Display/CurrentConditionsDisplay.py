@@ -3,7 +3,6 @@ class CurrentConditionsDisplay():
         self.weatherData = weatherData
         self.temperature = 0
         self.humidity = 0
-        self.pressure = 0
         weatherData.registerObserver(self)
 
     def update(self, temperature, humidity, pressure):
