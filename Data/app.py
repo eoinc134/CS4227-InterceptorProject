@@ -1,5 +1,5 @@
 import os, sys
-from WeatherData import WeatherData
+from Data.WeatherData import WeatherData
 
 currDir = os.path.dirname(os.path.realpath(__file__))
 rootDir = os.path.abspath(os.path.join(currDir, '..'))
@@ -28,6 +28,8 @@ class WeaterStation:
         weatherData.setMeasurements(80, 65, 30.4)
         weatherData.setMeasurements(82, 70, 29.2)
         weatherData.setMeasurements(78, 90, 29.2)
+
+        return "hello"
 
     if __name__ == "__main__":
         main()
