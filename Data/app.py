@@ -29,5 +29,7 @@ class WeaterStation:
         weatherData.setMeasurements(82, 70, 29.2)
         weatherData.setMeasurements(78, 90, 29.2)
 
+        return "hello"
+
     if __name__ == "__main__":
         main()
