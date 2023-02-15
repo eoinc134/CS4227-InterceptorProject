@@ -39,4 +39,4 @@ class WeatherData():
         return self.pressure
 
     def updateDispatcher(self):
-        self.dispatcher.update("Temperature: {}\n Humidity: {}\n Pressure: {}\n".format(self.temperature, self.humidity, self.pressure))
+        self.dispatcher.dispatch(f"Temperature: {self.temperature}\n Humidity: {self.humidity}\n Pressure: {self.pressure}\n")
