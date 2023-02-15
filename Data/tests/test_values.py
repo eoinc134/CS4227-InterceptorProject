@@ -1,7 +1,7 @@
 from .. import WeatherData, app
 from Display.CurrentConditionsDisplay import CurrentConditionsDisplay
 from Logging.Interceptor import WeatherUpdateInterceptor
-from Logging.WeatherDispatcher import WeatherDispatcher
+from Logging.Dispatcher import WeatherDispatcher
 
 #######
 #SETUP#
